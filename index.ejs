@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center"
+      >
+        <a href="/" class="text-2xl font-bold text-blue-600">NEWSIFY</a>
+        <div class="flex flex-wrap space-x-4">
+          <a href="/sports" class="text-gray-800 hover:text-blue-600">Sports</a>
+          <a href="/entertainment" class="text-gray-800 hover:text-blue-600"
+            >Entertainment</a
+          >
+          <a href="/finance" class="text-gray-800 hover:text-blue-600"
+            >Finance</a
+          >
+          <a href="/technology" class="text-gray-800 hover:text-blue-600"
+            >Technology</a
+          >
+          <a href="/health" class="text-gray-800 hover:text-blue-600">Health</a>
+          <a href="/world" class="text-gray-800 hover:text-blue-600">World</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Body -->
+    <div class="container mx-auto px-4 py-6">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <% articles.forEach(article => { %>
+        <!-- News Card -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="<%= article.urlToImage || 'NEWSIFY.png' %>"
+            alt="News Image"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h2 class="text-lg md:text-xl font-semibold">
+              <%= article.title %>
+            </h2>
+            <p class="mt-2 text-gray-600 text-sm md:text-base">
+              <%= article.description %>
+            </p>
+            <a
+              href="<%= article.url %>"
+              class="text-blue-600 hover:underline mt-4 block text-sm md:text-base"
+              target="_blank"
+              >Read more</a
+            >
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-6 py-4 text-center">
+      <p class="text-gray-600 text-sm md:text-base">
+        &copy; <%= new Date().getFullYear() %> NewsSite. All rights reserved.
+      </p>
+      <p class="text-gray-600 text-xs md:text-sm">
+        Terms and Conditions | Privacy Policy
+      </p>
+    </footer>
+  </body>
+</html>

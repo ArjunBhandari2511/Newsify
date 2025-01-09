@@ -1,0 +1,17 @@
+{
+  "name": "news-monkey",
+  "version": "1.0.0",
+  "description": "News Monkey is a news website created using HTML & ChatGPT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "node src/app.js"
+  },
+  "author": "Arjun",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "newsapi": "^2.4.1"
+  }
+}
